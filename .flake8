@@ -1,0 +1,4 @@
+[flake8]
+#  Ignore bare except
+ignore = E722, E701
+max-line-length = 150
