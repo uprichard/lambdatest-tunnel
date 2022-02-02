@@ -33,7 +33,4 @@ jobs:
         LT_USERNAME: ${{ secrets.LT_USERNAME }}
         LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
       run: |
-        echo $LT_USERNAME
-        echo $LT_ACCESS_KEY
-        python -m unittest discover || true
-        cat local.log
+        python -m unittest discover
