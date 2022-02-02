@@ -1,13 +1,13 @@
-# lambdatest-tunnel-manager
+# lambdatest-tunnel
 
-[![Python application](https://github.com/uprichard/lambdatest-tunnel-manager/actions/workflows/python-app.yml/badge.svg)](https://github.com/uprichard/lambdatest-tunnel-manager/actions/workflows/python-app.yml)
+[![Python application](https://github.com/uprichard/lambdatest-tunnel/actions/workflows/python-app.yml/badge.svg)](https://github.com/uprichard/lambdatest-tunnel/actions/workflows/python-app.yml)
 
 Python bindings for LambdaTest Tunnel.
 
 ### Installation
 
 ```sh
-pip install lambdatest-tunnel-manager
+pip install lambdatest-tunnel
 ```
 
 ### Example
