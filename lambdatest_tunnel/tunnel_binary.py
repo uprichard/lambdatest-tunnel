@@ -7,7 +7,7 @@ import requests
 import zipfile
 import io
 import re
-from lambdatest_tunnel.lt_errors import LambdaError
+from lambdatest_tunnel.lt_errors import LambdaTestTunnelError
 
 
 class LambdaTunnelBinary(object):
@@ -23,15 +23,15 @@ class LambdaTunnelBinary(object):
         if not os.path.isfile(self.local_binary):
             response = requests.get(self.remote_binary_path())
             if not response.ok:
-                raise LambdaError('Failed to download zipfile')
+                raise LambdaTestTunnelError('Failed to download zipfile')
             z = zipfile.ZipFile(io.BytesIO(response.content))
             z.extractall(self.local_binary_dir)
             if not os.path.isfile(self.local_binary):
-                raise LambdaError('Failed to extract binary')
+                raise LambdaTestTunnelError('Failed to extract binary')
         st = os.stat(self.local_binary)
         os.chmod(self.local_binary, st.st_mode | stat.S_IXUSR)
         if not self.check_binary():
-            raise LambdaError('File is corrupt?')
+            raise LambdaTestTunnelError('File is corrupt?')
         return self.local_binary
 
     def get_download_directory(self):
@@ -55,7 +55,7 @@ class LambdaTunnelBinary(object):
         elif platform_name == 'Windows':
             return f'https://downloads.lambdatest.com/tunnel/v3/windows/{os_bits}/LT_Windows.zip'
         else:
-            raise LambdaError('OS not supported')
+            raise LambdaTestTunnelError('OS not supported')
 
     def check_binary(self):
         try:

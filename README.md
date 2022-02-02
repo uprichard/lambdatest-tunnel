@@ -4,13 +4,13 @@
 
 Python bindings for LambdaTest Tunnel.
 
-## Installation
+### Installation
 
 ```sh
 pip install lambdatest-tunnel-manager
 ```
 
-## Example
+### Example
 
 ```python
 from lambdatest_tunnel.tunnel import LambdaTunnel
@@ -26,7 +26,7 @@ lt_tunnel.start()
 lt_tunnel.stop()
 ```
 
-## Arguments
+### Arguments
 
 You can pass any of the LambdaTest cmdline arguments to the tunnel manager.
 For the full list, refer [Tunnel options](https://www.lambdatest.com/support/docs/lambda-tunnel-modifiers/). For examples:
@@ -38,9 +38,11 @@ tunnel_args = { "--infoAPIPort": "random_port", "--tunnelName": "random_string"}
 ```
 
 
-## Contribute
+### Contribute
 
 To run the test suite run, `python -m unittest discover`.
+
+Note: "LT_USERNAME" & "LT_ACCESS_KEY" befoer running the tests
 
 ### Reporting bugs
 

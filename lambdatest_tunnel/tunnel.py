@@ -3,7 +3,7 @@ import requests
 import subprocess
 from time import sleep
 from lambdatest_tunnel.tunnel_binary import LambdaTunnelBinary
-from lambdatest_tunnel.lt_errors import LambdaError
+from lambdatest_tunnel.lt_errors import LambdaTestTunnelError
 
 
 class LambdaTunnel:
@@ -37,7 +37,7 @@ class LambdaTunnel:
             if self.tunnel_running():
                 return True
             sleep(1)
-        raise LambdaError('Failed to start tunnel')
+        raise LambdaTestTunnelError('Failed to start tunnel')
 
     def create_tunnel_cmdline(self):
         cmd = [self.local_binary_name]
