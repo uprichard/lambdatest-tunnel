@@ -1,0 +1,6 @@
+*.pyc
+env
+local.log
+dist/**
+.idea
+lambdatest_tunnel.egg-info
