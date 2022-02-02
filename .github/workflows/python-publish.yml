@@ -42,7 +42,7 @@ jobs:
       run: python -m build
     - name: Publish package
       if: github.repository == 'uprichard/lambdatest-tunnel-manager' && startsWith(github.ref, 'refs/tags')
-      uses: pypa/gh-action-pypi-publish@initial
+      uses: pypa/gh-action-pypi-publish@main
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
